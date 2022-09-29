@@ -1,0 +1,10 @@
+Host bastion
+	HostName 43.205.211.169
+	IdentityFile /Users/admin/Desktop/demo.pem
+	User ec2-user
+
+Host 10.20.*.*
+	IdentityFile /Users/admin/Desktop/demo.pem
+	Port 22
+	User ec2-user
+	ProxyCommand ssh -q -W %h:%p bastion
